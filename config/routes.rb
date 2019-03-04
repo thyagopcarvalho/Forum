@@ -1,4 +1,4 @@
 Rails.application.routes.draw do
-	resorces :posts
+	resources :posts
 	root 'posts#index'
 end
