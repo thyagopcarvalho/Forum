@@ -1,1 +1,4 @@
-%p= comment.content
+- if comment && comment.image.attached?
+	=image_tag(comment.image)
+- else
+	%p= comment.content
