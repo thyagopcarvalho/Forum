@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
 	before_action :find_post, only: [:show,:edit,:update,:destroy]
+	before_action :authenticate_user!
 	def index
 		@posts = Post.all.order("created_at DESC")
 	end
@@ -10,7 +11,6 @@ class PostsController < ApplicationController
 	def new
 		@post = current_user.posts.build
 	end
-
 
 	def create
 		@post = current_user.posts.build(post_params)

@@ -1,5 +1,9 @@
-%h1= @post.title
+%h4= @post.title
 %p= @post.content
+%h2= @post.comments.count
+= render @post.comments
+%h5 Reply
+= render "comments/form"
 = link_to "Edit",edit_post_path(@post)
 = link_to "Delete", post_path(@post), method: :delete,data: {confirm: "Você tem certeza que quer fazer isso?"}
 = link_to "Home", root_path
