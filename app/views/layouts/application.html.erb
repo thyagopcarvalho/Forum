@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Fórum</title>
+		<%= csrf_meta_tags%>
+		<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'%>
+		<%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload'%>
+		<link rel= "stylesheet", href= "http://fonts.googleapis.com/css?family=Lato:300,400,700", type= "text/css" />
+		<link rel ="stylesheet", href = "http://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.1/normalize.min.css"/>
+
+	</head>
+<body>
+	<div class="container">
+		<nav>
+	    <div class="nav-wrapper">
+				<%= link_to "Fórum", root_path, class:"brand-logo"%>
+	      <ul class="right hide-on-med-and-down">
+					<%- if user_signed_in?%>
+	        	<li><%= link_to "Novo tópico", new_post_path%></li>
+					<%else%>
+						<li><%= link_to "registrar-se", new_post_path%></li>
+	        <%end%>
+	      </ul>
+	    </div>
+  	</nav>
+			<%= yield%>
+</div>
+</body>
+</html>

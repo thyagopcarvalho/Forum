@@ -1,0 +1,23 @@
+<h2>Tópico: <%=@post.title%></h2>
+<h4>Conteúdo: <%=@post.content%></h4>
+<%= render @post.comments%>
+
+<p>Esse tópico já conta com <%=@post.comments.count%> comentários<p>
+<div clas="container">
+<%= render "comments/form"%>
+</div>
+
+<nav>
+	<div class="nav-wrapper">
+		<a href="#!" class="brand-logo"></a>
+		<ul class="center">
+			<li><%= link_to "Edit",edit_post_path(@post),class: "waves-effect waves-light btn blue lighten-3"%></li>
+			<li><%= link_to "Delete", post_path(@post), method: :delete, class: "waves-effect waves-light btn blue lighten-3",data: {confirm: "Você tem certeza que quer fazer isso?"}%></li>
+			<li><%= link_to "Home", root_path, class: "waves-effect waves-light btn blue lighten-3"%></li>
+		</ul>
+	</div>
+</nav>
+<div class="container">
+
+
+</div>

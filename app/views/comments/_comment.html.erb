@@ -1,0 +1,11 @@
+<ul class="collection">
+	<%- if comment && comment.image.attached?%>
+		<li class="collection-item">
+			<div style="width:400px; height:auto">
+				<%=image_tag(comment.image,style:'width:100%')%>
+			</div>
+		</li>
+	<%- else%>
+		<li class="collection-item"><%= comment.content%></li>
+	<%end%>
+</ul>

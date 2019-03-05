@@ -2,6 +2,5 @@
 	%p= "Erro ao criar comentário"
 = simple_form_for([@post,@post.comments.build]) do |f|
 	= f.input :content
-	-# = f.label :image
 	= f.file_field :image
 	= f.submit
