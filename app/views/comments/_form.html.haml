@@ -1,6 +1,6 @@
 - if @comment && @comment.errors
 	%p= "Erro ao criar comentário"
 = simple_form_for([@post,@post.comments.build]) do |f|
-	= f.input :content
-	= f.file_field :image
+	= f.input :content, label:"Conteúdo"
+	= f.file_field :image, label:"Imagem"
 	= f.submit

@@ -12,18 +12,26 @@
 <body>
 	<div class="container">
 		<nav>
-	    <div class="nav-wrapper">
-				<%= link_to "Fórum", root_path, class:"brand-logo"%>
-	      <ul class="right hide-on-med-and-down">
-					<%- if user_signed_in?%>
-	        	<li><%= link_to "Novo tópico", new_post_path%></li>
-					<%else%>
-						<li><%= link_to "registrar-se", new_post_path%></li>
-	        <%end%>
-	      </ul>
-	    </div>
+			<div class="row">
+				<div class="col s4 offset-s4" style="text-align:center">
+					<%= link_to root_path do %>
+						<%= content_tag :span, "Fórum", class: "brand-logo" %>
+					<% end %>
+				</div>
+				<div class="col s2 offset-s2">
+					<% if user_signed_in? %>
+						<%= link_to new_post_path do %>
+							<%= content_tag :span, "Novo tópico", class:"waves-effect waves-light btn" %>
+						<% end %>
+					<% else%>
+						<%= link_to new_user_registration_path do %>
+							<%= content_tag :span, "Registrar-se", class: "waves-effect waves-light btn" %>
+						<% end %>
+					<%end%>
+				</div>
+			</div>
   	</nav>
-			<%= yield%>
-</div>
+		<%= yield%>
+	</div>
 </body>
 </html>

@@ -1,7 +1,0 @@
-- @posts.each do |post|
-	%h2= link_to post.title, post
-	%p
-	Publicado a
-	=time_ago_in_words(post.created_at)
-	by
-	= post.user.email

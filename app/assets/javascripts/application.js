@@ -15,3 +15,4 @@
 //= require turbolinks
 //= require materialize-sprockets
 //= require_tree .
+// M.toast({html: 'I am a toast!'})
