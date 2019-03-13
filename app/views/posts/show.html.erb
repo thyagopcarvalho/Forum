@@ -1,8 +1,18 @@
-<h2>Tópico: <%=@post.title%></h2>
-<h4>Conteúdo: <%=@post.content%></h4>
-<%= render @post.comments%>
+<div class="divider"></div>
+<div class="row">
+	<div class="col s11">
+		<h4 style="color:blue">Título</h4>
+	</div>
+	<div class="col s1">
+		<a onclick="M.toast({html: <%=@post.comments.count%>} )" class="waves-effect waves-light btn"><i class="material-icons left">question_answer</i></a>
+	</div>
+	<div class="col s12"><h4><%=@post.title%></h4></div>
+	<div class="col s12"><h4 style="color:blue">Conteúdo</h4></div>
+	<div class="col s12"><h4><%=@post.content%></h4></div>
+</div>
+<div class="divider"></div>
+<h5><%= render @post.comments%></h5>
 
-<p>Esse tópico já conta com <%=@post.comments.count%> comentários<p>
 <div clas="container">
 <%= render "comments/form"%>
 </div>
@@ -17,7 +27,3 @@
 		</ul>
 	</div>
 </nav>
-<div class="container">
-
-
-</div>
